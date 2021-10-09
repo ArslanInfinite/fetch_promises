@@ -4,9 +4,9 @@ const http = new EasyHTTP()
 // line 5 will only return the promise, not the data itself 
 // const users = http.get('https://jsonplaceholder.typicode.com/users')
 
-http.get('https://jsonplaceholder.typicode.com/users')
-.then(data => console.log(data))
-.catch(error => console.log(error))
+// http.get('https://jsonplaceholder.typicode.com/users')
+// .then(data => console.log(data))
+// .catch(error => console.log(error))
 
 // creating user data
 const data = {
@@ -17,6 +17,12 @@ const data = {
 
 // creating post 
 
-http.post('https://jsonplaceholder.typicode.com/users', data)
+// http.post('https://jsonplaceholder.typicode.com/users', data)
+// .then(data => console.log(data))
+// .catch(error => console.log(error))
+
+// creating post 
+
+http.put('https://jsonplaceholder.typicode.com/users/2', data)
 .then(data => console.log(data))
 .catch(error => console.log(error))
