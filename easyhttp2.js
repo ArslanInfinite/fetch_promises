@@ -20,6 +20,22 @@ class EasyHTTP{
             .then(data => resolve(data))
             .catch(error => reject(error))
         })
-
     }
+
+    // making http POST request
+    post(url, data){
+        return new Promise((resolve, reject) => {
+            fetch(url, {
+                method: 'POST', 
+                headers: {
+                    'Content-type': 'application/json'
+                }, 
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => resolve(data))
+            .catch(error => reject(error))
+        })
+    }
+    
 }
