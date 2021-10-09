@@ -54,7 +54,6 @@ class EasyHTTP{
         })
     }
 
-
     // making http DELETE request
     delete(url){
         return new Promise((resolve, reject) => {
