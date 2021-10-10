@@ -1,7 +1,7 @@
 /** 
 * EasyHTTP Library 
 * Library for making HTTP requests
-* @version 2.0.0
+* @version 3.0.0
 * @author Arslan Ali
 * @license MIT
 *
@@ -13,13 +13,10 @@ class EasyHTTP{
     // the fetch needs to wrapped in a promise
     // the data will be returned as a response
     // the error will be returned as a reject 
-    get(url){
-        return new Promise((resolve, reject) => {
-            fetch(url)
-            .then(response => response.json())
-            .then(data => resolve(data))
-            .catch(error => reject(error))
-        })
+    async get(url){
+        const response = await fetch(url)
+        const responseData = await response.json()
+        return responseData
     }
 
     // making http POST request
